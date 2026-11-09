@@ -45,7 +45,7 @@ defmodule NodoCliente do
     send(@servicio_remoto, {destino_respuesta, solicitud})
   end
 
-  defp recibir_respuestas() do
+    defp recibir_respuestas() do
     receive do
       :fin ->
         Util.mostrar_mensaje("\nSe recibieron todas las respuestas.")
@@ -56,6 +56,9 @@ defmodule NodoCliente do
         Util.mostrar_mensaje(respuesta)
 
         recibir_respuestas()
+    after
+      10_000 ->
+        Util.mostrar_error("El servidor no respondió a tiempo.")
     end
   end
 end
