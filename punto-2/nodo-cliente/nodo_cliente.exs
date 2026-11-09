@@ -1,7 +1,8 @@
-ruta_punto_1 = Path.expand("../../punto-1", __DIR__)
-Code.require_file("util.ex", ruta_punto_1)
+Code.require_file("util.ex", __DIR__)
 
 defmodule NodoCliente do
+  @moduledoc "Nodo cliente que envía consultas al servidor y muestra las respuestas."
+
   @nombre_servicio :servicio_respuesta
   @nodo_servidor :"nodoservidor@localhost"
   @servicio_remoto {:servicio_sismos, @nodo_servidor}
@@ -14,6 +15,7 @@ defmodule NodoCliente do
     :fin
   ]
 
+  @doc "Registra :servicio_respuesta, se conecta al servidor y realiza las consultas."
   def main() do
     Process.register(self(), @nombre_servicio)
 

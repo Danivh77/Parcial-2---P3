@@ -21,7 +21,7 @@ defmodule Util do
   end
 
   # Convierte un número a texto con la cantidad de decimales indicada.
-   def formatear(numero, decimales) do
+  def formatear(numero, decimales) do
      :erlang.float_to_binary(numero / 1, decimals: decimales)
    end
 
@@ -71,5 +71,5 @@ defmodule Util do
         ingresar_numero(mensaje, parser, nombre_tipo)
     end
   end
-  
+
 end
