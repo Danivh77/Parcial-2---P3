@@ -52,7 +52,7 @@ defmodule Reporte do
   end
 
   defp encabezado do
-    "REPORTE DE MOVIMIENTOS SÍSMICOS POR CIUDAD\n"
+    "REPORTE DE MOVIMIENTOS SÍSMICOS POR CIUDAD"
   end
 
   defp lineas_movimientos([]), do: ["Movimientos: Sin movimientos registrados"]
