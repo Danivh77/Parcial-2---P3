@@ -1,7 +1,10 @@
 defmodule Servidor do
+   @moduledoc "Atiende consultas de reportes sísmicos y coordina la lectura concurrente de los archivos."
+
   @nombre_servicio :servicio_sismos
   @recursos Path.join(__DIR__, "resources")
 
+  @doc "Registra el proceso como :servicio_sismos y comienza a recibir solicitudes."
   def main() do
     Process.register(self(), @nombre_servicio)
 
@@ -11,7 +14,7 @@ defmodule Servidor do
 
     procesar_mensajes()
   end
-
+  
   # Atiende una solicitud, responde y vuelve a esperar.
   defp procesar_mensajes() do
     receive do

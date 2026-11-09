@@ -15,7 +15,7 @@ defmodule Reporte do
     propios = Enum.filter(movimientos, fn m -> m.id_ciudad == ciudad.id end)
     estadisticas = estadisticas(propios)
 
-    (["Ciudad: #{ciudad.nombre}", "Habitantes: #{ciudad.habitantes}"] ++
+    (["Ciudad: #{ciudad.nombre} (#{ciudad.id})", "Habitantes: #{ciudad.habitantes}"] ++
        lineas_movimientos(propios) ++
        [
          "Total de movimientos: #{estadisticas.cantidad}",
